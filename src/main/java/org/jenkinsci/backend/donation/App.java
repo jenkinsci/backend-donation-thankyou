@@ -1,10 +1,7 @@
 package org.jenkinsci.backend.donation;
 
 import com.google.gdata.client.spreadsheet.SpreadsheetService;
-import com.google.gdata.data.spreadsheet.CellEntry;
-import com.google.gdata.data.spreadsheet.CellFeed;
 import com.google.gdata.data.spreadsheet.SpreadsheetEntry;
-import com.google.gdata.data.spreadsheet.SpreadsheetFeed;
 import com.google.gdata.data.spreadsheet.WorksheetEntry;
 import com.google.gdata.data.spreadsheet.WorksheetFeed;
 import com.google.gdata.util.AuthenticationException;
@@ -37,16 +34,6 @@ public class App
     public void run() throws Exception {
         login();
         WorksheetEntry worksheet = findSpreadsheet();
-
-//        // Iterate through each row, printing its cell values.
-//        ListFeed listFeed = service.getFeed(listFeedUrl, ListFeed.class);
-//        for (ListEntry row : listFeed.getEntries()) {
-//            // Iterate over the remaining columns, and print each cell value
-//            for (String tag : row.getCustomElements().getTags()) {
-//                System.out.print(tag+'='+row.getCustomElements().getValue(tag) + "\t");
-//            }
-//            System.out.println();
-//        }
 
         List<Donation> donations = new ArrayList<Donation>();
         File[] files = dir.listFiles();
@@ -86,30 +73,5 @@ public class App
 
         service.setUserCredentials(props.getProperty("userName"), props.getProperty("password"));
         service.setProtocolVersion(SpreadsheetService.Versions.V3);
-    }
-
-    private static void playWithCells(WorksheetEntry worksheet) throws IOException, ServiceException {
-        // Fetch the cell feed of the worksheet.
-        URL cellFeedUrl = worksheet.getCellFeedUrl();
-        CellFeed cellFeed = worksheet.getService().getFeed(cellFeedUrl, CellFeed.class);
-
-        for (CellEntry cell : cellFeed.getEntries()) {
-            // Print the cell's address in A1 notation
-            System.out.print(cell.getTitle().getPlainText() + "\t");
-            // Print the cell's formula or text value
-            System.out.print(cell.getCell().getInputValue() + "\t");
-            System.out.println();
-        }
-    }
-
-    private static void listSpreadSheets(SpreadsheetService service) throws IOException, ServiceException {
-        URL SPREADSHEET_FEED_URL = new URL("https://spreadsheets.google.com/feeds/spreadsheets/private/full");
-        SpreadsheetFeed feed = service.getFeed(SPREADSHEET_FEED_URL,SpreadsheetFeed.class);
-        List<SpreadsheetEntry> spreadsheets = feed.getEntries();
-
-        for (SpreadsheetEntry sheet : spreadsheets) {
-            System.out.println(sheet.getId());
-            System.out.println(sheet.getTitle().getPlainText());
-        }
     }
 }
