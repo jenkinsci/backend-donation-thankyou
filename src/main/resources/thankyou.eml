@@ -1,0 +1,31 @@
+X-Mozilla-Status: 0001
+X-Mozilla-Status2: 01000000
+X-Mozilla-Keys:                                                                                 
+FCC: mailbox://kk122374%40mail.sun.net%3A993@127.0.0.1/Sent
+X-Identity-Key: id3
+BCC: Kohsuke Kawaguchi <kk@kohsuke.org>
+Message-ID: <4EDE7722.2090508@kohsuke.org>
+Date: Tue, 06 Dec 2011 12:15:45 -0800
+From: Kohsuke Kawaguchi <kk@kohsuke.org>
+X-Mozilla-Draft-Info: internal/draft; vcard=0; receipt=0; DSN=0; uuencode=0
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:7.0.1) Gecko/20110929 Thunderbird/7.0.1
+MIME-Version: 1.0
+Subject: Thank you for your donation to Jenkins
+Content-Type: text/plain; charset=ISO-8859-1; format=flowed
+Content-Transfer-Encoding: 7bit
+
+Thank you very much for your donation to the Jenkins project, and my
+apologies for being so lazy in sending this e-mail out.
+
+I'm trying to put together the donor list page like [1]. As such, please
+let me know:
+
+     - if you'd like to remain anonymous
+     - otherwise, the name you'd like your donation to be credited to.
+
+
+
+[1] http://www.eclipse.org/donate/donorlist.php
+
+-- 
+Kohsuke Kawaguchi                          http://kohsuke.org/
